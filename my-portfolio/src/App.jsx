@@ -435,7 +435,7 @@ function Hero({ onResumeUpdate }) {
                 </button>
               </div>
               <div className="hero-stats" style={{ display: "flex", gap: 44, paddingTop: 36, borderTop: `1px solid ${C.border}`, animation: "fadeUp .6s ease .5s both" }}>
-                {[["10", "Months Exp", C.blue], ["10+", "Projects", C.purple], ["3", "AI Certs", C.cyan], ["100%", "Passion", C.green]].map(([n, l, color]) => (
+{[["1+", "Years Exp", C.blue], ["6", "Projects", C.purple], ["6", "AI/Cloud Certs", C.cyan], ["100%", "Passion", C.green]].map(([n, l, color]) => (
                   <div key={l}>
                     <div style={{ fontSize: "clamp(22px,2.8vw,40px)", fontWeight: 900, letterSpacing: "-.03em", color, lineHeight: 1, textShadow: `0 0 30px ${color}60` }}>{n}</div>
                     <div style={{ fontSize: 11.5, color: C.muted, marginTop: 6, fontWeight: 600, letterSpacing: ".02em" }}>{l}</div>
@@ -471,7 +471,7 @@ function Hero({ onResumeUpdate }) {
                 <div style={{ position: "absolute", top: 20, left: -20, padding: "10px 16px", background: "rgba(10,10,24,.95)", border: `1px solid rgba(176,110,243,.25)`, borderRadius: 14, backdropFilter: "blur(16px)", animation: "float 4s ease-in-out infinite", animationDelay: "1.5s", boxShadow: "0 8px 30px rgba(176,110,243,.2)" }}>
                   <div style={{ fontSize: 11, color: C.muted, marginBottom: 4 }}>Tech Stack</div>
                   <div style={{ display: "flex", gap: 5, flexWrap: "wrap", maxWidth: 140 }}>
-                    {["Mern Stack"].map((t, i) => (
+                    {["MERN Stack"].map((t, i) => (
                       <span key={t} style={{
                         fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 6, background: [
                           "rgba(16,185,129,.15)", "rgba(79,142,247,.15)", "rgba(34,211,238,.15)", "rgba(176,110,243,.15)"
@@ -492,7 +492,7 @@ function BentoAbout() {
   frontend: ["React","JS","Tailwind"],
   backend:  ["Node","Express","Django"],
   database: ["MongoDB","PostgreSQL"],
-  ai:       ["Claude API","MCP","LLMs"],
+  ai:       ["Claude API","MCP","Bedrock"],
   auth:     ["JWT","OAuth2","RBAC"]
 };`;
   return (
@@ -507,10 +507,10 @@ function BentoAbout() {
               <span style={{ fontSize: 11, color: C.muted, fontWeight: 700, letterSpacing: "2.5px", textTransform: "uppercase" }}>Bio</span>
             </div>
             <p style={{ fontSize: 15.5, lineHeight: 1.9, color: "rgba(238,242,255,.75)", marginBottom: 22 }}>
-              Full Stack Developer based in <strong style={{ color: C.text }}>Madurai, India</strong> crafting production-grade apps with the <strong style={{ color: C.blue }}>MERN stack</strong>. Deep interest in bridging web development with AI — particularly the <strong style={{ color: C.purple }}>Claude API</strong> and <strong style={{ color: C.purple }}>Model Context Protocol (MCP)</strong>. Currently shipping scalable products at <strong style={{ color: C.text }}>Hurryep Technologies</strong>.
+              Full Stack Developer with <strong style={{ color: C.text }}>1+ year of hands-on experience</strong> based in <strong style={{ color: C.text }}>Madurai, India</strong>, building and shipping production-grade apps with the <strong style={{ color: C.blue }}>MERN stack</strong>. Shipped live products including an <strong style={{ color: C.text }}>Instagram DM automation platform (NanoDM)</strong> using the Meta Graph API and a full-stack <strong style={{ color: C.text }}>e-commerce platform</strong> for Aqua Tech RO System. Currently expanding into AI-powered development — certified in the <strong style={{ color: C.purple }}>Claude API</strong>, <strong style={{ color: C.purple }}>Model Context Protocol (MCP)</strong>, and <strong style={{ color: C.purple }}>AWS Generative AI / Amazon Bedrock</strong>. Currently shipping scalable products at <strong style={{ color: C.text }}>Hurryep Technologies</strong>.
             </p>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-              {["MERN Stack", "AI Integration", "Claude API", "MCP", "Full Stack", "REST APIs"].map(tag => (
+              {["MERN Stack", "AI Integration", "Claude API", "MCP", "AWS Bedrock", "Full Stack", "REST APIs"].map(tag => (
                 <span key={tag} className="tag tag-blue">{tag}</span>
               ))}
             </div>
@@ -564,7 +564,8 @@ function BentoAbout() {
             </pre>
           </div>
           {[
-            { icon: "⚡", title: "Fast Learner", desc: "Picked up Claude API & MCP in weeks, shipped to production", color: C.amber },
+            { icon: "🚀", title: "Ships Live Products", desc: "NanoDM & Aqua Tech RO System — both live in production", color: C.green },
+            { icon: "⚡", title: "Fast Learner", desc: "Picked up Claude API, MCP & AWS Bedrock in weeks, shipped to production", color: C.amber },
             { icon: "🎯", title: "Impact Focused", desc: "Every project tied to measurable business outcomes", color: C.blue },
             { icon: "🤝", title: "Team Player", desc: "Collaborative, clear communication, reliable delivery", color: C.purple },
           ].map((f, i) => (
@@ -592,12 +593,20 @@ const SKILLS = {
     { n: "Claude API Integration", v: 90, badge: "ai" },
     { n: "Model Context Protocol (MCP)", v: 86, badge: "ai" },
     { n: "Prompt Engineering", v: 88, badge: "hot" },
+    { n: "Amazon Bedrock", v: 80, badge: "ai" },
+  ],
+  "Tools & Integrations": [
+    { n: "Git / GitHub", v: 88 },
+    { n: "Postman", v: 85 },
+    { n: "Meta Graph API", v: 80, badge: "hot" },
+    { n: "Multer (File Uploads)", v: 78 },
   ],
 };
 const SKILL_COLORS = {
   Frontend: [C.blue, C.cyan],
   "Backend & DB": [C.purple, C.blue],
   "AI / Emerging": [C.purple, C.cyan],
+  "Tools & Integrations": [C.cyan, C.blue],
 };
 function Skills() {
   const [tab, setTab] = useState("Frontend");
@@ -648,17 +657,31 @@ function Skills() {
             </div>
           ))}
         </div>
-        <div style={{ marginTop: 44, padding: "26px 30px", borderRadius: 18, background: "rgba(255,255,255,.02)", border: `1px solid ${C.border}` }}>
-          <div style={{ fontSize: 11, color: C.muted, fontWeight: 700, letterSpacing: "3px", textTransform: "uppercase", marginBottom: 18, display: "flex", alignItems: "center", gap: 8 }} className="mono">
-            <span style={{ display: "inline-block", width: 16, height: 1.5, background: C.muted }} />
-            Also familiar with
-          </div>
-          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-            {["React Router", "Redux", "Mongoose", "Multer", "Axios", "JWT", "OAuth 2.0", "RBAC", "REST APIs", "Git", "Docker (basics)", "Figma"].map(t => (
-              <span key={t} className="tag tag-muted" style={{ cursor: "default" }}>{t}</span>
-            ))}
-          </div>
-        </div>
+       <div style={{ marginTop: 44, padding: "26px 30px", borderRadius: 18, background: "rgba(255,255,255,.03)", border: `1px solid ${C.border}` }}>
+  <div style={{ fontSize: 11, color: C.muted, fontWeight: 700, letterSpacing: "3px", textTransform: "uppercase", marginBottom: 18, display: "flex", alignItems: "center", gap: 8 }} className="mono">
+    <span style={{ display: "inline-block", width: 16, height: 1.5, background: C.muted }} />
+    Also familiar with
+  </div>
+  <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+    {["React Router", "Redux", "Mongoose", "Multer", "Axios", "JWT", "OAuth 2.0", "RBAC", "REST APIs", "Git", "Docker (basics)", "Figma"].map(t => (
+      <span
+        key={t}
+        style={{
+          cursor: "default",
+          fontSize: 12.5,
+          fontWeight: 600,
+          padding: "7px 14px",
+          borderRadius: 20,
+          color: "#cfd3dc",
+          background: "rgba(255,255,255,.06)",
+          border: "1px solid rgba(255,255,255,.12)",
+        }}
+      >
+        {t}
+      </span>
+    ))}
+  </div>
+</div>
       </div>
     </section>
   );
@@ -671,10 +694,10 @@ const EXP = [
     current: true,
     color: C.blue,
     points: [
-      "Worked on production-level web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js)",
-      "Built scalable and secure modules for internal SEO service projects",
-      "Implemented RESTful APIs, JWT authentication, OAuth login, and role-based access control (RBAC)",
-      "Improved application performance and optimized workflows",
+      "Built and shipped production-grade web applications end-to-end using the MERN stack (MongoDB, Express.js, React.js, Node.js)",
+      "Architected scalable, secure backend modules powering internal SEO service products",
+      "Engineered RESTful APIs with JWT authentication, OAuth login, and role-based access control (RBAC) to secure multi-tier user access",
+      "Optimized application performance and streamlined development workflows, reducing load times and improving reliability",
     ],
   },
   {
@@ -684,10 +707,10 @@ const EXP = [
     current: false,
     color: C.purple,
     points: [
-      "Assisted in developing full-stack web applications using the MERN stack",
-      "Supported API development and frontend integration",
-      "Worked on debugging issues and improving UI responsiveness",
-      "Collaborated with the team on real-time project requirements",
+      "Contributed to full-stack feature development across the MERN stack under senior developer mentorship",
+      "Built and integrated REST APIs with responsive React.js frontends, accelerating feature delivery",
+      "Debugged production issues and improved UI responsiveness across key modules",
+      "Collaborated cross-functionally with the team to translate real-time project requirements into working features",
     ],
   },
 ];
@@ -740,8 +763,16 @@ function Experience() {
   );
 }
 const PROJECTS = [
-  { title: "NanoDM Auto DM Tool", desc: "Social media automation using Meta Graph API to send automated direct messages based on user interactions. Contributed to backend API integration, blog management, and subscription workflows.", tags: ["Node.js", "Express", "Meta Graph API", "Automation"], color: C.purple, impact: "Automated user engagement", icon: "💬" },
+ { title: "NanoDM — Instagram DM Automation", desc: "Built a live Instagram DM automation platform using the Meta Graph API to automate and manage direct messages at scale, with backend API integration using Node.js and Express.", tags: ["React", "Node.js", "Express", "Meta Graph API"], color: C.purple, impact: "Automated Instagram engagement", icon: "💬", live: "https://nanodm.com" },
   { title: "Aqua Tech RO System Website", desc: "Independently designed and developed the official website for Aqua Tech RO System — full SEO, performance optimization and content management.", tags: ["MERN", "SEO", "MongoDB"], color: C.cyan, impact: "3× organic traffic growth", icon: "💧", live: "https://www.aquatechrosystem.in/" },
+  {
+    title: "Custom CRM System",
+    desc: "Developed a full-stack CRM system with role-based access control (CEO/Master/Employee), secure JWT and OAuth authentication, and responsive dashboards tailored to each role. Built RESTful APIs for lead and employee management with optimized performance.",
+    tags: ["MERN", "JWT", "OAuth", "RBAC"],
+    color: C.blue,
+    impact: "Multi-level role-based access",
+    icon: "🗂️"
+  },
   { title: "Global Suggest (SEO Tool)", desc: "SEO tool with scalable MERN architecture including admin dashboard, multi-level auth and detailed analytics dashboard.", tags: ["MERN", "JWT", "OAuth", "RBAC"], color: C.blue, impact: "99.9% system uptime", icon: "📊", live: "https://globalsuggest.com/" },
   {
     title: "Thunder Bike Garage",
@@ -814,13 +845,16 @@ function Projects() {
   );
 }
 const CERTS_AI = [
+  { title: "AWS Certified Generative AI Developer – Professional Practice Set", issuer: "AWS", date: "2026", icon: "🎓", desc: "Applied GenAI development practices on AWS" },
+  { title: "Building Generative AI Applications Using Amazon Bedrock", issuer: "AWS", date: "2026", icon: "☁️", desc: "Deploying GenAI apps on Amazon Bedrock" },
+  { title: "Essentials of Prompt Engineering", issuer: "Anthropic", date: "Mar 2026", icon: "✍️", desc: "Structuring prompts for reliable model output" },
   { title: "Building with the Claude API", issuer: "Anthropic", date: "Mar 2026", icon: "🤖", desc: "Production integration patterns, streaming, tool use" },
   { title: "Claude Code in Action", issuer: "Anthropic", date: "Mar 2026", icon: "⚡", desc: "Agentic coding workflows and automation" },
   { title: "Introduction to MCP", issuer: "Anthropic", date: "Mar 2026", icon: "🧠", desc: "Model Context Protocol architecture & servers" },
 ];
 const CERTS_STD = [
-  { title: "Python Full Stack", issuer: "QSpiders", date: "Aug 2024", icon: <FaPython /> },
   { title: "MERN Stack Dev", issuer: "Shikshaa Simple Learn", date: "Mar 2025", icon: <FaReact /> },
+  { title: "Python Full Stack", issuer: "QSpiders", date: "Aug 2024", icon: <FaPython /> },
 ];
 function Certs() {
   return (
@@ -840,7 +874,7 @@ function Certs() {
               <div style={{ fontWeight: 900, color: C.purple, fontSize: 16 }}>🔥 AI Mastery Track — Anthropic</div>
               <div style={{ fontSize: 12, color: C.muted, marginTop: 2 }}>Verified certifications from the team behind Claude</div>
             </div>
-            <span style={{ marginLeft: "auto", fontSize: 11, padding: "4px 12px", borderRadius: 20, background: "rgba(176,110,243,.15)", border: "1px solid rgba(176,110,243,.3)", color: C.purple, fontWeight: 800 }}>3 Certs</span>
+            <span style={{ marginLeft: "auto", fontSize: 11, padding: "4px 12px", borderRadius: 20, background: "rgba(176,110,243,.15)", border: "1px solid rgba(176,110,243,.3)", color: C.purple, fontWeight: 800 }}>6 Certs</span>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 16, position: "relative" }}>
             {CERTS_AI.map((c, i) => (
@@ -898,7 +932,7 @@ function Contact() {
         <div className="items-center! flex justify-center! gap-20" >
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {[
-              { Icon: Mail, label: "Email", val: "abhishek250404abi@gmai.com", href: "mailto:abhishek250404abi@gmai.com", color: C.blue },
+             { Icon: Mail, label: "Email", val: "abhishek250404abi@gmail.com", href: "mailto:abhishek250404abi@gmail.com", color: C.blue },
               { Icon: Phone, label: "Phone", val: "+91 63855 33286", href: "tel:+916385533286", color: C.green },
               { Icon: MapPin, label: "Location", val: "Madurai, Tamil Nadu", color: C.purple },
               { Icon: GithubIcon, label: "GitHub", val: "github.com/Abhishek250404", href: "https://github.com/Abhishek250404", color: C.text },
@@ -967,12 +1001,12 @@ function Contact() {
           <p style={{ fontSize: 13, color: C.muted }}>
             Designed & built by Abhishek Kumar R · © {new Date().getFullYear()}
           </p>
-          <div style={{ display: "flex", gap: 20, justifyContent: "center", marginTop: 22 }}>
-            {[["GitHub", "https://github.com"], ["LinkedIn", "https://linkedin.com"]].map(([l, h]) => (
-              <a key={l} href={h} style={{ fontSize: 13, color: C.muted, textDecoration: "none", transition: "color .2s" }}
-                onMouseEnter={e => e.target.style.color = C.text} onMouseLeave={e => e.target.style.color = C.muted}>{l}</a>
-            ))}
-          </div>
+        <div style={{ display: "flex", gap: 20, justifyContent: "center", marginTop: 22 }}>
+  {[["GitHub", "https://github.com/Abhishek250404"], ["LinkedIn", "https://www.linkedin.com/in/abhishek-kumar-r-213644224"]].map(([l, h]) => (
+    <a key={l} href={h} target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, color: C.muted, textDecoration: "none", transition: "color .2s" }}
+      onMouseEnter={e => e.target.style.color = C.text} onMouseLeave={e => e.target.style.color = C.muted}>{l}</a>
+  ))}
+</div>
         </div>
       </div>
     </section>
@@ -981,10 +1015,10 @@ function Contact() {
 const BOT_REPLIES = {
   default: "👋 Hey! I'm Abhishek's AI assistant. Ask me about his skills, projects, experience, or how to hire him!",
   skills: "Abhishek is expert in React, Node.js, Express, MongoDB & Python. Standout skill: Claude API & MCP integration — shipped to production.",
-  experience: "Full Stack Dev at Hurryep Technologies (Mar 2026–present), promoted from intern. Shipped MERN apps with JWT/OAuth/RBAC + integrated Claude AI.",
-  projects: "5 key projects: 💬 NanoDM Automation, 💧 Aqua Tech RO Portal, 📊 Global Suggest SEO, ⚡ Thunder Bike Garage, 🌱 Grocery Traceability.",
-  contact: "📧 abhishek.kumar@email.com · 📞 +91 63855 33286 · 📍 Madurai, India. Open to remote opportunities!",
-  ai: "3 Anthropic certifications (Mar 2026): Claude API, Claude Code, and MCP. He ships AI features to production — not just demos.",
+  experience: "Full Stack Dev at Hurryep Technologies (Mar 2026–present), promoted from intern (Jul 2025). 1+ year building MERN apps with JWT/OAuth/RBAC + integrated Claude AI.",
+  projects: "6 key projects: 💬 NanoDM Automation, 💧 Aqua Tech RO Portal, 🗂️ Custom CRM, 📊 Global Suggest SEO, ⚡ Thunder Bike Garage, 🌱 Grocery Traceability.",
+  contact: "📧 abhishek250404abi@gmail.com · 📞 +91 63855 33286 · 📍 Madurai, India. Open to remote opportunities!",
+  ai: "6 AI/Cloud certifications (2026): Claude API, Claude Code, MCP, Prompt Engineering, AWS GenAI Developer & Amazon Bedrock. He ships AI features to production — not just demos.",
   hire: "Abhishek is actively looking! Great for Full Stack, MERN, or AI-integration positions. Use the contact form or email directly.",
 };
 const getReply = (msg) => {
